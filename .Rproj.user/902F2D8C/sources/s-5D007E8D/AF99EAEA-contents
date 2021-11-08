@@ -1,0 +1,76 @@
+\documentclass[mathserif]{beamer}
+%\documentclass[handout,mathserif]{beamer}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{decorations.text}
+\pgfplotsset{compat=1.7}
+
+%\graphicspath{{/Users/jrabanal/Dropbox/bates/324/}}
+
+\usetheme{Boadilla}
+\usecolortheme{seagull}
+
+% tikzmark command, for shading over items
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+% standard enumeration
+\setbeamertemplate{enumerate items}{(\arabic{enumi})}
+
+% default itemize
+\setbeamertemplate{itemize items}[circle]
+
+% transparency
+\setbeamercovered{transparent=15}
+
+% for resuming lists across frames
+\newcounter{savedenum}
+\newcommand*{\saveenum}{\setcounter{savedenum}{\theenumi}}
+\newcommand*{\resume}{\setcounter{enumi}{\thesavedenum}}
+\usenavigationsymbolstemplate{}
+
+%\beamertemplatenavigationsymbolsempty % Fjerner navigasjonssymboler
+%\setbeameroption{show notes}
+%\pgfpagesuselayout{6 on 1}[a4paper,border shrink=5mm]
+
+% title
+\title{Exposure}
+\subtitle{risk in cash flows}
+%\author[Prof. Rabanal]{Jean Paul Rabanal}
+\institute[UiS]{UiS}
+\date{\today}
+\tikzset{
+   invisible/.style={opacity=0},
+   visible on/.style={alt=#1{}{invisible}},
+   alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+   },
+}
+\begin{document}
+
+\begin{frame}
+   \maketitle
+
+\end{frame}
+
+\input{intro}
+%\input{../../../cases/norway/cycling_vm_bergen_2018/lecture_slides/what_happened.tex}
+\input{exposure_following_stulz_williamson}
+\input{exposure_following_stulz_williamson_past_history}
+\input{exposure_following_stulz_williamson_simulation}
+%\input{../../../cases/norway/exposure_estimation/lecture_slides/exposure_ose}
+\input{summary}
+%\input{artend}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "slides"
+%%% End: 

@@ -1,0 +1,203 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               % print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm}
+\usepackage[pdftex]{graphicx}
+
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=seccolor,
+    urlcolor=seccolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % number chapter, section, subsection
+
+% Tricks for having figures close to where they are defined:
+% 1. define less restrictive rules for where to put figures
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0.75}
+% floatpagefraction must always be less than topfraction!
+% 2. ensure all figures are flushed before next section
+\usepackage[section]{placeins}
+% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
+%\usepackage{float}\restylefloat{figure}
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% http://www.ctex.org/documents/packages/layout/titlesec.pdf
+\usepackage{titlesec}  % needed for colored section headings
+%\usepackage[compact]{titlesec}  % reduce the spacing around section headings
+
+% --- section/subsection headings with blue color ---
+\definecolor{seccolor}{cmyk}{.9,.5,0,.35}  % siamltexmm.sty section color
+\titleformat{name=\section}
+{\color{seccolor}\normalfont\Large\bfseries}
+{\color{seccolor}\thesection}{1em}{}
+\titleformat{name=\subsection}
+{\color{seccolor}\normalfont\large\bfseries}
+{\color{seccolor}\thesubsection}{1em}{}
+\titleformat{name=\paragraph}[runin]
+{\color{seccolor}\normalfont\normalsize\bfseries}
+{}{}{\indent}
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+
+\begin{flushright}
+\textbf{JP Rabanal}\\
+\textbf{Final Exam. Fall 2021.}\\
+\end{flushright}
+
+\textbf{Please, be clear in your answers. You might get points off for questions that do not provide enough explanation. }
+
+
+\begin{enumerate}
+\item Inka Oil has been searching for ways to diversify in more sustainable directions. One of their chemical engineers has developed a new way to extract fertilizer directly from sewage. As this is a line of business that will be important in the coming circular economy, Inka Oil views this as a promising direction to go, and plan a pilot plant. They are now evaluating the economy of this pilot plant.
+The plant will take one year to build, with construction costs of 40 million. The plant has a planned operating life of ten years, which implies a straight-line depreciation for the life-time of the plant. Inka Oil has an offer from the local utility to provide sewage at no cost. Annual costs of running the plant have been calculated at 5 million/year. There is however a great deal of uncertainty about the quantity and quality of the fertilizer produced using the new process. Their engineer has come up with three scenarios for annual production: 25 tonnes/50 tonnes/100 tonnes. Each of these scenarios is viewed as equally likely. If the fertilizer is of high quality, it can be sold to the country’s hobby gardeners at a price of 0.2 million/ton. If the quality however is low, the fertilizer will be exported at a price of 0.15 million/ton. The engineer views each quality scenario as equally likely.
+
+\begin{enumerate}
+\item Write the Operating Revenues that Inka oils expects for the next 10 years. (7 points)
+\item Complete the following table (7 points)
+
+
+\begin{tabular}{lcccccccccc}
+t &$1$ & $2$ &$3$ &$4$&$5$ &6 & 7 &8 &9&10\\
+Operating Revenues & &&&&&&&& \\
+Operating Costs & &&&&&&&& \\
+Operating Cash Flows & &&&&&&&& \\
+Depreciation & &&&&&&&& \\
+Taxable Income & &&&&&&&& \\
+Taxes (20\%) & &&&&&&&& \\
+After tax Income & &&&&&&&& \\
+Add back ??  & &&&&&&&& \\
+FCF & &&&&&&&& \\
+\end{tabular}
+
+\item Inka Oil uses a cost of capital equal to 13 percent for all of its projects related to the oil industry. Below is a list of cost of capital for many sectors. Please use a relevant cost of capital to find the NPV. Do you recommend to invest? Why? (8 points)
+
+\begin{tabular}{lc}
+sectors &cost of capital from equity data (percent)\\
+Oil & 13\\
+Food & 5 \\
+Fertilizers & 6 \\
+Health & 20 \\
+Technology & 25 \\
+\end{tabular}
+
+\item A critical analyst points out that the assumption of free cost of fertilizer is not sustainable. Use the ideas discussed from Porter to support or refute the analysit criticism. How your answer will affect the conclusion found above? (8 points)
+
+\item Find the cost of capital that makes the project to break-even. (5 points)
+
+\item How can one achive the cost of capital found above? Please make reasonable assumptions in your answer (15 points). 
+\end{enumerate}
+
+\newpage
+\item Emile's company has existing assets that generates an EPS of \$4. If
+ Emile does not invest except to maintain existing assets, EPS is expected
+ to remain constant at \$4 a year. However, starting next year (end of
+ this year), Emile has the chance to invest \$2.5 per share a year in
+ developing a newly technology. Each investment is expected to
+ generate a permanent 18\% return. Note: Assume that this return is
+ not compounded. So each year
+Emile gets 2.5 $\times$ .18. However, the technology will be fully developed by the end of the fifth year.
+
+What will be the stock price and PE ratio assuming that investors require a 12\% rate of return? (20 points)
+
+\item We, a company that leases office spaces, announces that Net Income is not the best measure of the return on its office spaces. For example, in a recent document to future bondholders defines the Community Adjusted EBITDA: 
+
+\textit{as a way analysing [sic] the core operating performance of our WeWork locations, inclusive of community support functions but excluding the impact of general and administrative expenses, which are not incurred at the location level and do not relate directly to the operation of our communities.}
+
+Below, the table presents the GAAP EBITDA Reconciliation
+
+\begin{enumerate}
+\item According to the staff from We, why do you add stock-based compensation? (5 points)
+\item In offices, do you think that depreciation is not an important expense? (5 points)
+\item As a shareholder, do you prefer to work with EBITDA or cash flows statements? (5 points)
+\end{enumerate}
+
+  \begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[scale=0.6]{we_exam.png}
+  \end{center}
+  \end{figure}
+
+\item Look at the table below which we obtain data from different assets, 
+
+\begin{tabular}{lccccc}
+ & red & blue& green& yellow& aggregate risky assets\\
+Expected return (\%)& 40.6 & 46.2& 14.3& 19.4& 23.1\\
+Standard deviation (\%)& 104.5 &84.4&54.8&59.7&29.7\\
+Beta & 2.56 & 2.08& 0.14& 1.33& 1.00\\
+
+\end{tabular}
+
+
+
+\begin{enumerate}
+\item Do all assets lie on the same SML? (5 points)
+\item After drawing the SML using the information from the table above Henry is not sure whether to sell or buy these assets. What is your recommendation? Why? (5 points)
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
