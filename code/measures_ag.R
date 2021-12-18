@@ -3,13 +3,15 @@ library(dplyr)
 library(tidyverse)
 library(xtable)
 library(here)
-load("~/Desktop/jotarepos/capmout/alltrades.Rda")
+load("~/Desktop/jotarepos/capmout/clean/alltrades.Rda")
 
-mean(dd$ex_price[dd$asset==3])-mean(dd$ex_price[dd$asset==2])
 
 dd[["isBot"]] <- grepl("Bot", dd[["make_pcode"]]) | grepl("Bot", dd[["take_pcode"]])
 dd[["maker_isBot"]] <- grepl("Bot", dd[["make_pcode"]])
 dd[["taker_isBot"]] <- grepl("Bot", dd[["take_pcode"]])
+write.csv(dd,file="dtrades.csv",row.names=FALSE)
+
+
 
 table(dd$asset,dd$isBot)
 
@@ -33,6 +35,18 @@ profits_bot/(length(unique(dd$session))*7)
 mean(dd$ex_price[dd$asset==3 & dd$round>5])-mean(dd$ex_price[dd$asset==2& dd$round>5])
 sum(dd$ex_price[dd$asset==4 & dd$isBot==TRUE])
 sum(dd$ex_price[dd$asset!=4& dd$isBot==TRUE])
+
+
+mean(dd$ex_price[dd$asset==3])-mean(dd$ex_price[dd$asset==2])
+
+
+tapply(dd$ex_price[dd$asset==2 ],dd$sess[dd$asset==2],mean,na.rm=T)
+tapply(dd$ex_price[dd$asset==3],dd$sess[dd$asset==3],mean,na.rm=T)
+
+tapply(dd$ex_price[dd$asset==2 & dd$isBot==F],dd$sess[dd$asset==2 & dd$isBot==F],mean,na.rm=T)
+tapply(dd$ex_price[dd$asset==3 & dd$isBot==F],dd$sess[dd$asset==3 & dd$isBot==F],mean,na.rm=T)
+
+
 
 
 

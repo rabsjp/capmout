@@ -21,7 +21,7 @@ dprice2<- d %>%
   )
 
 pdf("sum_prices.pdf")
-plot(dprice2$r[dprice2$activo==2 & dprice2$tre==1],dprice2$prices[dprice2$activo==3 & dprice2$tre==1]-dprice2$prices[dprice2$activo==2 & dprice2$tre==1],type="l",ylim=c(-5,20),xlab="market",ylab=expression('P'[C] - 'P'[B]),lwd=2)
+plot(dprice2$r[dprice2$activo==2 & dprice2$tre==1],dprice2$prices[dprice2$activo==3 & dprice2$tre==1]-dprice2$prices[dprice2$activo==2 & dprice2$tre==1],type="l",ylim=c(-10,40),xlab="market",ylab=expression('P'[C] - 'P'[B]),lwd=2)
 lines(dprice2$r[dprice2$activo==2 & dprice2$tre==2],dprice2$prices[dprice2$activo==3 & dprice2$tre==2]-dprice2$prices[dprice2$activo==2 & dprice2$tre==2],col="blue",lwd=2,lty=2)
 lines(dprice2$r[dprice2$activo==2 & dprice2$tre==3],dprice2$prices[dprice2$activo==3 & dprice2$tre==3]-dprice2$prices[dprice2$activo==2 & dprice2$tre==3],col="red",lwd=2,lty=3)
 abline(h=0,lty=2,col="gray")

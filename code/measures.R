@@ -3,7 +3,7 @@ library(dplyr)
 library(tidyverse)
 library(xtable)
 
-load("~/Desktop/jotarepos/capmout/alldata.Rda")
+load("~/Desktop/jotarepos/capmout/clean/alldata.Rda")
 
 d <- arrange(d, d$session, d$round, d$tiempo)
 

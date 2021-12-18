@@ -1,7 +1,7 @@
 rm(list = ls())
-setwd("~/Desktop/jotarepos/capmout/a2c")
+setwd("~/Desktop/jotarepos/capmout/abc")
 files = list.files(pattern="*.csv")
-d<-read.csv(files[2],sep=",",header=T, stringsAsFactors = FALSE)
+d<-read.csv(files[1],sep=",",header=T, stringsAsFactors = FALSE)
 d<-d[d$round_number>3,]
 d$tiempo<-cumsum(d$timestamp)
 

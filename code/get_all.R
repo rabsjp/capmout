@@ -4,7 +4,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(xtable)
-setwd("~/Desktop/jotarepos/capmout/a2c")
+setwd("~/Desktop/jotarepos/capmout/abc")
 files = list.files(pattern="*json")
 protect_against_null <- function( x ) {
   if( is.null(x) )
@@ -76,7 +76,7 @@ makers<-rbind(makers,takers)
 df<- df  %>% left_join(makers, by = c("id"= "make_id"))
 
 #df$time_inactive[df$status=="CANCELED"]<-df$time_inactive[df$status=="CANCELED"]+7200
-df$tre<-2 #1 refers to ABC 2 to A2B
+df$tre<-1 #1 refers to ABC 2 to A2B
 df$session<-unlist(strsplit(nombre, split='.', fixed=TRUE))[1]
 
 for(r in 2:length(unique(df$round))){
@@ -89,7 +89,7 @@ for(r in 2:length(unique(df$round))){
   df$time_inactive[df$round==r]<-df$time_inactive[df$round==r]+max(df$tiempo[df$round==r-1])
 }
 
-dt$tre<-2
+dt$tre<-1
 dt$session<-unlist(strsplit(nombre, split='.', fixed=TRUE))[1]
 
 d_pcodes<- df %>% select(id,pcode)
@@ -106,7 +106,6 @@ dt<- dt %>% inner_join(d_bid, by = c("make_id" = "id"))
 colnames(dt)[12] = "make_isbid"
 
 
-
 save(df,file=paste("data_",df$session[1],".Rda",sep=""))
 save(dt,file=paste("datatrades_",dt$session[1],".Rda",sep=""))
 
@@ -114,7 +113,8 @@ save(dt,file=paste("datatrades_",dt$session[1],".Rda",sep=""))
 ## Put all data together
 rm(list = ls())
 
-setwd("~/Desktop/jotarepos/capmout/a2c/clean")
+setwd("~/Desktop/jotarepos/capmout/clean")
+#setwd("~/Desktop/jotarepos/capmout/a2c/clean")
 files<-list.files(pattern="data_")
 d<-NULL
 for (f in files){
