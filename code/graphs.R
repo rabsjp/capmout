@@ -37,7 +37,7 @@ legend(5,4,c("ABC","A2C","A2C short"),col=c("black", "blue","red"),lty=c(1,2,3),
 dev.off()
 
 data<-d
-numero<-3
+numero<-2
 breakdance<-data$dt*c(1:dim(data)[1])
 breakdance<-breakdance[breakdance>0]
 #5,6,7,9,

@@ -36,6 +36,10 @@ mean(dd$ex_price[dd$asset==3 & dd$round>5])-mean(dd$ex_price[dd$asset==2& dd$rou
 sum(dd$ex_price[dd$asset==4 & dd$isBot==TRUE])
 sum(dd$ex_price[dd$asset!=4& dd$isBot==TRUE])
 
+mean(dd$ex_price[dd$asset==3 & dd$isBot==TRUE & dd$session=='5c09zarp'])
+mean(dd$ex_price[dd$asset==3 & dd$isBot==FALSE & dd$session=='5c09zarp'])
+mean(dd$ex_price[dd$asset==2  & dd$session=='5c09zarp'])
+
 
 mean(dd$ex_price[dd$asset==3])-mean(dd$ex_price[dd$asset==2])
 
