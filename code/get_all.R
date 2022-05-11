@@ -4,7 +4,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(xtable)
-setwd("~/Desktop/jotarepos/capmout/abc")
+setwd("~/Desktop/jotarepos/capmout/abc//")
 files = list.files(pattern="*json")
 protect_against_null <- function( x ) {
   if( is.null(x) )
@@ -15,7 +15,7 @@ protect_against_null <- function( x ) {
 
 df<-NULL
 dt<-NULL
-nombre<-files[3]
+nombre<-files[4]
 d <- fromJSON(file = nombre)
 #round time_active time_inactive pcode id status price
 for (round in c(4:length(d))) {

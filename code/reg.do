@@ -42,8 +42,19 @@ bootstrap, cluster(sess) idcluster(nuevo) seed(200) rep(100): reg precio t2 t3 a
 
 xtset r
 bootstrap, cluster(sess) idcluster(nuevo) seed(200) rep(200): xtreg precio t2 t3 a_1 a_3 a_4 a_1_t2 a_3_t2 a_4_t2 a_1_t3 a_3_t3 a_4_t3, fe
+
+test t2+a_3_t2=0
+
 test a_3_t2=a_3_t3
 test a_1+a_1_t3-a_3-a_3_t3=0
+
+
+xtset r
+bootstrap, cluster(sess) idcluster(nuevo) seed(200) rep(200): xtreg z t2 t3 a_1 a_3 a_4 a_1_t2 a_3_t2 a_4_t2 a_1_t3 a_3_t3 a_4_t3, fe
+test a_3_t2=a_3_t3
+test a_1+a_1_t3-a_3-a_3_t3=0
+
+
 
 
 
