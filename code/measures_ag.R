@@ -36,7 +36,6 @@ profits_bot/(5*7)
 sum(dd$ex_price[dd$asset==4 & dd$isBot==TRUE & dd$tre==1]>0 )/(5*7)
 
 
-
 mean(dd$ex_price[dd$asset==3 & dd$round>5])-mean(dd$ex_price[dd$asset==2& dd$round>5])
 sum(dd$ex_price[dd$asset!=4& dd$isBot==TRUE])
 
@@ -55,8 +54,6 @@ tapply(dd$ex_price[dd$asset==2 & dd$isBot==F],dd$sess[dd$asset==2 & dd$isBot==F]
 tapply(dd$ex_price[dd$asset==3 & dd$isBot==F],dd$sess[dd$asset==3 & dd$isBot==F],mean,na.rm=T)
 
 tapply(dd$ex_price[dd$asset==3],dd$sess[dd$asset==3],mean,na.rm=T)
-
-
 
 
 dd$taker_isBot*dd$make_isbid
@@ -90,6 +87,23 @@ mean(q3_3/q1_3)
 wilcox.test(q2_3-q3_3)
 wilcox.test(q2_2/q3_2,q2_1/q3_1)
 wilcox.test(q2_3/q3_3,q2_1/q3_1)
+
+t1 = c(mean(q2_1/q1_1),mean(q3_1/q1_1),mean(q4_1/q1_1))
+t2 = c(mean(q2_2/q1_2),mean(q3_2/q1_2),mean(q4_2/q1_2))
+t3 = c(mean(q2_3/q1_3),mean(q3_3/q1_3),mean(q4_2/q1_3))
+rbind(t1,t2,t3)
+
+
+t1c = c(mean(q1_1/q3_1),mean(q2_1/q1_1),mean(q4_1/q3_1))
+t2c = c(mean(q1_2/q3_2),mean(q2_2/q3_2),mean(q4_2/q3_2))
+t3c = c(mean(q1_3/q3_3),mean(q2_3/q3_3),mean(q4_2/q3_3))
+rbind(t1c,t2c,t3c)
+
+
+
+mean(q1_1/q3_1)
+
+
 
 spread<-matrix(NA,3,5)
 qETF<-matrix(NA,3,5)
